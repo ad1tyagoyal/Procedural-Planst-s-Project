@@ -24,22 +24,17 @@ namespace PlanetGenerationScripts {
         [SerializeField] private ShapeSettings m_ShapeSettings;
         [SerializeField] private ColorSettings m_ColorSettings;
 
-
-        private void OnValidate() {
-            GeneratePlanet();
-        }
-
-        private void GeneratePlanet() {
+        public void GeneratePlanet() {
             InitializeMeshes();
             GeneratePlanetMesh();
             GeneratePlanetColors();
         }
-        private void OnShapeSettingsUpdates() {
+        public void OnShapeSettingsUpdates() {
             InitializeMeshes();
             GeneratePlanetMesh();
         }
 
-        private void OnColorSettingsUpdated() {
+        public void OnColorSettingsUpdated() {
             InitializeMeshes();
             GeneratePlanetColors();
         }
@@ -86,6 +81,9 @@ namespace PlanetGenerationScripts {
                 meshFilter.GetComponent<MeshRenderer>().sharedMaterial.color = m_ColorSettings.planetColor;
             }
         }
+
+        public ref ShapeSettings GetShapeSettings() { return ref m_ShapeSettings; }
+        public ref ColorSettings GetColorSettings() { return ref m_ColorSettings; }
 
     }
 }
