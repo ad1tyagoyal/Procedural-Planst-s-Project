@@ -13,3 +13,24 @@ MonoBehaviour:
   m_Name: Shape1
   m_EditorClassIdentifier: 
   planetRadius: 1
+  noiseLayers:
+  - enable: 1
+    usingFirstLayerAsMask: 0
+    noiseSettings:
+      noOfOctaves: 5
+      strength: 0.32
+      baseLacunarity: 1.01
+      lacunarity: 1.88
+      persistence: 0.55
+      offset: {x: 0, y: 0, z: 0}
+      minValue: 1.2
+  - enable: 1
+    usingFirstLayerAsMask: 1
+    noiseSettings:
+      noOfOctaves: 3
+      strength: 0.28
+      baseLacunarity: 1.52
+      lacunarity: 1.55
+      persistence: 0.65
+      offset: {x: 0, y: 0, z: 0}
+      minValue: 1
