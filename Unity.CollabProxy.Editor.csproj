@@ -62,8 +62,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Components\Menus\FloatingMenuItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Views\Adapters\IAdapter.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\EditorGameService\SettingsProviderVisuals\LearnMoreVisualHelper.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Components\IconButton.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Components\SearchBar.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Components\IconButton.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\EditorGameService\SettingsProviderVisuals\EnabledVisuals.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Utilities\Threading.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Views\MainPageView.cs" />
@@ -71,8 +71,8 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Presenters\StartPresenter.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Components\ChangeListElements\ToggleableChangeListElement.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\EditorGameService\CloudCollabService.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Views\ChangesTabPageView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Components\TextButton.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Views\ChangesTabPageView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Models\IHistoryModel.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Utilities\OpenLinksUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@1.15.7\Editor\Collaborate\Presenters\IHistoryPresenter.cs" />
@@ -446,6 +446,9 @@
     </Reference>
     <Reference Include="log4netPlastic">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.15.7\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.8.1\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>

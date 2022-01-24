@@ -17,20 +17,42 @@ MonoBehaviour:
   - enable: 1
     usingFirstLayerAsMask: 0
     noiseSettings:
-      noOfOctaves: 5
-      strength: 0.32
-      baseLacunarity: 1.01
-      lacunarity: 1.88
-      persistence: 0.55
-      offset: {x: 0, y: 0, z: 0}
-      minValue: 1.2
+      noiseFilterType: 0
+      simplexNoiseFilterSettings:
+        noOfOctaves: 3
+        strength: 0.13
+        baseLacunarity: 0.3
+        lacunarity: 3.58
+        persistence: 0.65
+        offset: {x: 2.66, y: 1, z: 1}
+        minValue: 1.14
+      rigidNoiseFilterSettings:
+        noOfOctaves: 1
+        strength: 0.08
+        baseLacunarity: 1
+        lacunarity: 1
+        persistence: 1
+        offset: {x: 1, y: 1, z: 1}
+        minValue: 1
+        weight: 1
   - enable: 1
     usingFirstLayerAsMask: 1
     noiseSettings:
-      noOfOctaves: 5
-      strength: 0.78
-      baseLacunarity: 1.52
-      lacunarity: 1.55
-      persistence: 0.65
-      offset: {x: 0, y: 0, z: 0}
-      minValue: 1
+      noiseFilterType: 1
+      simplexNoiseFilterSettings:
+        noOfOctaves: 1
+        strength: 1
+        baseLacunarity: 1
+        lacunarity: 1
+        persistence: 1
+        offset: {x: 1, y: 1, z: 1}
+        minValue: 1
+      rigidNoiseFilterSettings:
+        noOfOctaves: 2
+        strength: 0.67
+        baseLacunarity: 0.75
+        lacunarity: 1.6
+        persistence: 2.27
+        offset: {x: 4.45, y: 1, z: 1}
+        minValue: 1.13
+        weight: 1.02
