@@ -12,23 +12,23 @@ namespace ProceduralPlanets {
         }
 
         public float Evaluate(ref Vector3 point) {
-            float _noiseValue = 0.0f;
-            float _amplitude = 1.0f;
-            float _frequency = noiseSettings.baseLacunarity;
-            float _weight = noiseSettings.weight;
+            float noiseValue = 0.0f;
+            float amplitude = 1.0f;
+            float frequency = noiseSettings.baseLacunarity;
+            float weight = noiseSettings.weight;
 
             for (int i = 0; i < noiseSettings.noOfOctaves; i++) {
-                float _tempNoise = 1 - Mathf.Abs(noise.Evaluate(point * _frequency + noiseSettings.offset));
-                _tempNoise *= _tempNoise;
-                _tempNoise *= _weight;
-                _weight = _tempNoise;
+                float tempNoise = 1 - Mathf.Abs(noise.Evaluate(point * frequency + noiseSettings.offset));
+                tempNoise *= tempNoise;
+                tempNoise *= weight;
+                weight = tempNoise;
 
-                _noiseValue += _tempNoise * _amplitude;
-                _amplitude *= noiseSettings.persistence;
-                _frequency *= noiseSettings.lacunarity;
+                noiseValue += tempNoise * amplitude;
+                amplitude *= noiseSettings.persistence;
+                frequency *= noiseSettings.lacunarity;
             }
-            _noiseValue = Mathf.Max(0.0f, (_noiseValue - noiseSettings.minValue));
-            return _noiseValue * noiseSettings.strength;
+            noiseValue = Mathf.Max(0.0f, (noiseValue - noiseSettings.minValue));
+            return noiseValue * noiseSettings.strength;
         }
     }
 }

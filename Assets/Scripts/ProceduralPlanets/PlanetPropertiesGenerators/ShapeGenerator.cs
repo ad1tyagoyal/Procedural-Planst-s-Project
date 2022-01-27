@@ -19,27 +19,27 @@ namespace ProceduralPlanets {
         }
 
         public ref Vector3 GetPointOnPlanet(ref Vector3 pointOnUnitSphere) {
-            float _elevation = 0.0f;
-            float _firstLayerValue = 0.0f;
+            float elevation = 0.0f;
+            float firstLayerValue = 0.0f;
 
             if(m_NoiseFilters.Length > 0) {
-                _firstLayerValue = m_NoiseFilters[0].Evaluate(ref pointOnUnitSphere);
+                firstLayerValue = m_NoiseFilters[0].Evaluate(ref pointOnUnitSphere);
                 if (m_ShapeSettings.noiseLayers[0].enable) {
-                    _elevation = _firstLayerValue;
+                    elevation = firstLayerValue;
                 }
             }
 
 
             for (int i = 1; i < m_NoiseFilters.Length; i++) {
                 if(m_ShapeSettings.noiseLayers[i].enable) {
-                    float _mask = (m_ShapeSettings.noiseLayers[i].usingFirstLayerAsMask) ? _firstLayerValue : 1;
-                    _elevation += m_NoiseFilters[i].Evaluate(ref pointOnUnitSphere) * _mask;
+                    float mask = (m_ShapeSettings.noiseLayers[i].usingFirstLayerAsMask) ? firstLayerValue : 1;
+                    elevation += m_NoiseFilters[i].Evaluate(ref pointOnUnitSphere) * mask;
                 }
             }
 
-            float _finalElevation = (m_ShapeSettings.planetRadius * (1 + _elevation));
-            elevationMinMax.UpdateMinMax(_finalElevation);
-            pointOnUnitSphere *= _finalElevation;
+            float finalElevation = (m_ShapeSettings.planetRadius * (1 + elevation));
+            elevationMinMax.UpdateMinMax(finalElevation);
+            pointOnUnitSphere *= finalElevation;
 
             return ref pointOnUnitSphere;
         }

@@ -21,12 +21,12 @@ namespace ProceduralPlanets {
         }
 
         public void UpdateColors() {
-            Color[] _colors = new Color[TEXTURE_RESOLUTION];
+            Color[] colors = new Color[TEXTURE_RESOLUTION];
             for(int i = 0; i < TEXTURE_RESOLUTION; i++) {
-                _colors[i] = m_ColorSettings.planetGradient.Evaluate(i / ((float) TEXTURE_RESOLUTION - 1.0f));
+                colors[i] = m_ColorSettings.planetGradient.Evaluate(i / ((float) TEXTURE_RESOLUTION - 1.0f));
             }
 
-            m_PlanetTexture.SetPixels(_colors);
+            m_PlanetTexture.SetPixels(colors);
             m_PlanetTexture.Apply();
             m_ColorSettings.planetMaterial.SetTexture("planet_texture", m_PlanetTexture);
         }

@@ -14,9 +14,9 @@ public class PlanetEditor : Editor {
     private Editor m_ColorEditor;
 
     public  override void OnInspectorGUI() {
-        using (var _check = new EditorGUI.ChangeCheckScope()) {
+        using (var check = new EditorGUI.ChangeCheckScope()) {
             base.OnInspectorGUI();
-            if (_check.changed) m_Planet.GeneratePlanet();
+            if (check.changed) m_Planet.GeneratePlanet();
         }
         DrawPlanetSettings(m_Planet.GetColorSettings(), m_Planet.OnColorSettingsUpdated, ref m_ColorEditor);
         DrawPlanetSettings(m_Planet.GetShapeSettings(), m_Planet.OnShapeSettingsUpdates, ref m_ShapeEditor);
@@ -25,11 +25,11 @@ public class PlanetEditor : Editor {
     private void DrawPlanetSettings(Object settings, System.Action OnSettingsUpdated, ref Editor editor) {
         if (!settings) return;
 
-        using (var _check = new EditorGUI.ChangeCheckScope()) {
+        using (var check = new EditorGUI.ChangeCheckScope()) {
             EditorGUILayout.InspectorTitlebar(true, settings);
             CreateCachedEditor(settings, null, ref editor);
             editor.OnInspectorGUI();
-            if (_check.changed)
+            if (check.changed)
                 OnSettingsUpdated();
         }
     }
