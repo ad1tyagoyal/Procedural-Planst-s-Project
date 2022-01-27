@@ -47,7 +47,7 @@ namespace ProceduralPlanets {
 
             m_TerrainFaces = new TerrainFace[6];
 
-            Vector3[] directions = { Vector3.up, 
+            Vector3[] _directions = { Vector3.up, 
                                      Vector3.down, 
                                      Vector3.right, 
                                      Vector3.left, 
@@ -56,29 +56,26 @@ namespace ProceduralPlanets {
 
             for(int i = 0; i < 6; i++) {
                 if(m_MeshFilters[i] == null) {
-                    GameObject faceMesh = new GameObject("Face Mesh" + i);
-                    faceMesh.transform.parent = transform;
-                    faceMesh.AddComponent<MeshRenderer>();
-                    m_MeshFilters[i] = faceMesh.AddComponent<MeshFilter>();
+                    GameObject _faceMesh = new GameObject("Face Mesh" + i);
+                    _faceMesh.transform.parent = transform;
+                    _faceMesh.AddComponent<MeshRenderer>();
+                    m_MeshFilters[i] = _faceMesh.AddComponent<MeshFilter>();
                     m_MeshFilters[i].sharedMesh = new Mesh();
                 }
-                m_TerrainFaces[i] = new TerrainFace(ref m_ShapeGenerator, resolution, m_MeshFilters[i].sharedMesh, directions[i]);
+                m_TerrainFaces[i] = new TerrainFace(ref m_ShapeGenerator, resolution, m_MeshFilters[i].sharedMesh, _directions[i]);
             }
         }
 
 
         private void GeneratePlanetMesh() {
-            foreach(TerrainFace terrainFace in m_TerrainFaces) {
-                terrainFace.ConstructMesh();
+            foreach(TerrainFace _terrainFace in m_TerrainFaces) {
+                _terrainFace.ConstructMesh();
             }
             Debug.Log(m_ShapeGenerator.elevationMinMax.valueMin + " " + m_ShapeGenerator.elevationMinMax.valueMax);
             m_ColorGenerator.UpdateElevationColor(m_ShapeGenerator.elevationMinMax);
         }
 
         private void GeneratePlanetColors() {
-            /*foreach (MeshFilter meshFilter in m_MeshFilters) {
-                meshFilter.GetComponent<MeshRenderer>().sharedMaterial = m_ColorSettings.planetMaterial;
-            }*/
             m_ColorGenerator.UpdateColors();
         }
 

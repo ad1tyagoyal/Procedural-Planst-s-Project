@@ -21,43 +21,41 @@ namespace ProceduralPlanets {
         }
 
         public void ConstructMesh() {
-            Vector3[] vertices = new Vector3[(int) Mathf.Pow(m_Resolution, 2)];
-            int[] triangleIndices = new int[(int)(Mathf.Pow((m_Resolution - 1), 2) * 6)];
+            Vector3[] _vertices = new Vector3[(int) Mathf.Pow(m_Resolution, 2)];
+            int[] _triangleIndices = new int[(int)(Mathf.Pow((m_Resolution - 1), 2) * 6)];
 
-            {
-                int verticesIndex = 0, triangleIndex = 0;
+            int _verticesIndex = 0, _triangleIndex = 0;
 
-                //foreach vertices
-                for(int y = 0; y < m_Resolution; y++) {
-                    for(int x = 0; x < m_Resolution; x++) {
-                
-                        Vector2 percentage = new Vector2(x, y) / (m_Resolution - 1);
-                        Vector3 pointOnUnitCube = m_LocalUp + ((percentage.x - 0.5f) * 2 * m_AxisA) 
-                                                            + ((percentage.y - 0.5f) * 2 * m_AxisB);
-                        pointOnUnitCube.Normalize();
+            //foreach vertices
+            for (int y = 0; y < m_Resolution; y++) {
+                for (int x = 0; x < m_Resolution; x++) {
 
-                        vertices[verticesIndex] = m_ShapeGenerator.GetPointOnPlanet(ref pointOnUnitCube);
-               
-                        if(x != (m_Resolution - 1) && y != (m_Resolution - 1)) {
-                            triangleIndices[triangleIndex]          = verticesIndex; 
-                            triangleIndices[triangleIndex + 1]      = verticesIndex + 1; 
-                            triangleIndices[triangleIndex + 2]      = verticesIndex + m_Resolution + 1; 
+                    Vector2 _percentage = new Vector2(x, y) / (m_Resolution - 1);
+                    Vector3 _pointOnUnitCube = m_LocalUp + ((_percentage.x - 0.5f) * 2 * m_AxisA)
+                                                        + ((_percentage.y - 0.5f) * 2 * m_AxisB);
+                    _pointOnUnitCube.Normalize();
+
+                    _vertices[_verticesIndex] = m_ShapeGenerator.GetPointOnPlanet(ref _pointOnUnitCube);
+
+                    if (x != (m_Resolution - 1) && y != (m_Resolution - 1)) {
+                        _triangleIndices[_triangleIndex] = _verticesIndex;
+                        _triangleIndices[_triangleIndex + 1] = _verticesIndex + 1;
+                        _triangleIndices[_triangleIndex + 2] = _verticesIndex + m_Resolution + 1;
                         
-                            triangleIndices[triangleIndex + 3]      = verticesIndex; 
-                            triangleIndices[triangleIndex + 4]      = verticesIndex + m_Resolution + 1; 
-                            triangleIndices[triangleIndex + 5]      = verticesIndex +m_Resolution; 
-                        
-                            triangleIndex += 6;
-                        }
+                        _triangleIndices[_triangleIndex + 3] = _verticesIndex;
+                        _triangleIndices[_triangleIndex + 4] = _verticesIndex + m_Resolution + 1;
+                        _triangleIndices[_triangleIndex + 5] = _verticesIndex + m_Resolution;
 
-                        verticesIndex++;
+                        _triangleIndex += 6;
                     }
+
+                    _verticesIndex++;
                 }
             }
 
             m_Mesh.Clear();
-            m_Mesh.vertices = vertices;
-            m_Mesh.triangles = triangleIndices;
+            m_Mesh.vertices = _vertices;
+            m_Mesh.triangles = _triangleIndices;
             m_Mesh.RecalculateNormals();
         }
     }
