@@ -12,7 +12,7 @@ namespace ProceduralPlanets {
         public void UpdateSettings(ref ColorSettings colorSettings) {
             this.m_ColorSettings = colorSettings;
             if(m_PlanetTexture == null) {
-                m_PlanetTexture = new Texture2D(TEXTURE_RESOLUTION, 1);
+                m_PlanetTexture = new Texture2D(TEXTURE_RESOLUTION, 1, TextureFormat.RGBA32, false);
             }
         }
 

@@ -71,7 +71,6 @@ namespace ProceduralPlanets {
             foreach(TerrainFace terrainFace in m_TerrainFaces) {
                 terrainFace.ConstructMesh();
             }
-            Debug.Log(m_ShapeGenerator.elevationMinMax.valueMin + " " + m_ShapeGenerator.elevationMinMax.valueMax);
             m_ColorGenerator.UpdateElevationColor(m_ShapeGenerator.elevationMinMax);
         }
 

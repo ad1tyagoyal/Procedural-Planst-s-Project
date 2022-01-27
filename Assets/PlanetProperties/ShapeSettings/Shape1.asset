@@ -15,17 +15,17 @@ MonoBehaviour:
   planetRadius: 1
   noiseLayers:
   - enable: 1
-    usingFirstLayerAsMask: 0
+    usingFirstLayerAsMask: 1
     noiseSettings:
       noiseFilterType: 0
       simplexNoiseFilterSettings:
-        noOfOctaves: 3
-        strength: 0.13
+        noOfOctaves: 4
+        strength: 0.06
         baseLacunarity: 0.3
-        lacunarity: 3.58
+        lacunarity: 2.99
         persistence: 0.65
-        offset: {x: 2.66, y: 1, z: 1}
-        minValue: 1.14
+        offset: {x: -3.47, y: 4.01, z: 1}
+        minValue: 1.18
       rigidNoiseFilterSettings:
         noOfOctaves: 1
         strength: 0.08
@@ -48,10 +48,10 @@ MonoBehaviour:
         offset: {x: 1, y: 1, z: 1}
         minValue: 1
       rigidNoiseFilterSettings:
-        noOfOctaves: 2
-        strength: 0.67
-        baseLacunarity: 0.75
-        lacunarity: 1.6
+        noOfOctaves: 5
+        strength: 0.25
+        baseLacunarity: 0.38
+        lacunarity: 1.89
         persistence: 2.27
         offset: {x: 4.45, y: 1, z: 1}
         minValue: 1.13
