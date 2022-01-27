@@ -8,3 +8,5 @@ So far i have implemented the following things
 This unity project can create procedural planets with different terrain styles implemented using perlin noise algorithm and you can stack different noise layers on top on each 
 other to get your desired terrain. 
 Assign colors to the terrain using a graident which will create a texture for the planet with colors of each point according to its height.
+
+![Planet 2](https://user-images.githubusercontent.com/56722344/151435282-6c593cd2-8540-4bba-b92d-e826bf98c611.JPG)
