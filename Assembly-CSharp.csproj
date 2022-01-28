@@ -40,6 +40,7 @@
      <Compile Include="Assets\Scripts\ProceduralPlanets\UtilsProceduralPlanets\SimplexPerlinNoise.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\PlanetPropertiesGenerators\NoiseSettings.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\UtilsProceduralPlanets\MinMax.cs" />
+     <Compile Include="Assets\Scripts\ProceduralPlanets\UtilsProceduralPlanets\BooltoInt.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\UtilsProceduralPlanets\NoiseFilterFactory.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\InterfacesProceduralPlanets\INoiseFilter.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\PlanetPropertiesGenerators\SimplexNoiseFilter.cs" />
@@ -50,7 +51,8 @@
      <Compile Include="Assets\Scripts\ProceduralPlanets\EditorScripts\PlanetEditor.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\ScriptableObjects\ShapeSettings.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\PlanetPropertiesGenerators\RigidNoiseFilter.cs" />
-     <Compile Include="Assets\Scripts\ProceduralPlanets\UtilsProceduralPlanets\BooltoInt.cs" />
+     <None Include="Assets\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
+     <None Include="Assets\Day-Night Skyboxes\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

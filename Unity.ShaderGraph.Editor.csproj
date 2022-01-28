@@ -206,9 +206,9 @@
      <Compile Include="Packages\com.unity.shadergraph\Editor\Data\Graphs\CubemapMaterialSlot.cs" />
      <Compile Include="Packages\com.unity.shadergraph\Editor\Util\CreateSerializableGraph.cs" />
      <Compile Include="Packages\com.unity.shadergraph\Editor\Util\ValueUtilities.cs" />
-     <Compile Include="Packages\com.unity.shadergraph\Editor\Data\Interfaces\Graph\IOnAssetEnabled.cs" />
      <Compile Include="Packages\com.unity.shadergraph\Editor\Generation\TargetResources\BlockFields.cs" />
      <Compile Include="Packages\com.unity.shadergraph\Editor\Data\Nodes\Utility\KeywordNode.cs" />
+     <Compile Include="Packages\com.unity.shadergraph\Editor\Data\Interfaces\Graph\IOnAssetEnabled.cs" />
      <Compile Include="Packages\com.unity.shadergraph\Editor\Data\Graphs\SerializableMesh.cs" />
      <Compile Include="Packages\com.unity.shadergraph\Editor\Data\Interfaces\Graph\SlotReference.cs" />
      <Compile Include="Packages\com.unity.shadergraph\Editor\Data\Graphs\ShaderKeyword.cs" />

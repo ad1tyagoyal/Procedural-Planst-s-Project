@@ -5,10 +5,14 @@ using UnityEngine;
 namespace ProceduralPlanets {
     
     public class ShapeGenerator {
+        
+
         public MinMax elevationMinMax;
 
         [SerializeField] INoiseFilter[] m_NoiseFilters;
         private ShapeSettings m_ShapeSettings;
+
+
 
         public void UpdateSettings(ref ShapeSettings shapeSettings) {
             elevationMinMax = new MinMax();
@@ -38,9 +42,9 @@ namespace ProceduralPlanets {
             }
 
             float finalElevation = (m_ShapeSettings.planetRadius * (1 + elevation));
+
             elevationMinMax.UpdateMinMax(finalElevation);
             pointOnUnitSphere *= finalElevation;
-
             return ref pointOnUnitSphere;
         }
     

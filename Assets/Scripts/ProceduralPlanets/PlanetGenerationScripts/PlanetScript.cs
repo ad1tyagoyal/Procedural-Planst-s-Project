@@ -16,10 +16,27 @@ namespace ProceduralPlanets {
 
         [SerializeField]
         private ShapeGenerator m_ShapeGenerator = new ShapeGenerator();
+        
         private ColorGenerator m_ColorGenerator = new ColorGenerator();
 
-        [SerializeField] private ShapeSettings m_ShapeSettings;
-        [SerializeField] private ColorSettings m_ColorSettings;
+        [SerializeField] private ShapeSettings[] m_ShapeSettings;
+        [SerializeField] private ColorSettings[] m_ColorSettings;
+        
+        
+        private ShapeSettings m_ShapeSetting;
+        private ColorSettings m_ColorSetting;
+
+
+        public void GenerateRandomPlanet() {
+            m_ShapeSetting = m_ShapeSettings[Random.Range(0, m_ShapeSettings.Length)];
+            m_ColorSetting = m_ColorSettings[Random.Range(0, m_ColorSettings.Length)];
+            GeneratePlanet();
+        }
+
+
+
+
+
 
         public void GeneratePlanet() {
             InitializeMeshes();
@@ -39,8 +56,8 @@ namespace ProceduralPlanets {
 
 
         private void InitializeMeshes() {
-            m_ShapeGenerator.UpdateSettings(ref m_ShapeSettings);
-            m_ColorGenerator.UpdateSettings(ref m_ColorSettings);
+            m_ShapeGenerator.UpdateSettings(ref m_ShapeSetting);
+            m_ColorGenerator.UpdateSettings(ref m_ColorSetting);
 
             if(m_MeshFilters == null || m_MeshFilters.Length == 0)  
                 m_MeshFilters = new MeshFilter[6];
@@ -81,8 +98,8 @@ namespace ProceduralPlanets {
             m_ColorGenerator.UpdateColors();
         }
 
-        public ref ShapeSettings GetShapeSettings() { return ref m_ShapeSettings; }
-        public ref ColorSettings GetColorSettings() { return ref m_ColorSettings; }
+        public ref ShapeSettings GetShapeSettings() { return ref m_ShapeSetting; }
+        public ref ColorSettings GetColorSettings() { return ref m_ColorSetting; }
 
     }
 }
