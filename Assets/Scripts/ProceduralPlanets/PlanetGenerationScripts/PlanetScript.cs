@@ -27,6 +27,12 @@ namespace ProceduralPlanets {
         private ColorSettings m_ColorSetting;
 
 
+
+        void Start()
+        {
+            GenerateRandomPlanet();
+        }
+
         public void GenerateRandomPlanet() {
             m_ShapeSetting = m_ShapeSettings[Random.Range(0, m_ShapeSettings.Length)];
             m_ColorSetting = m_ColorSettings[Random.Range(0, m_ColorSettings.Length)];
