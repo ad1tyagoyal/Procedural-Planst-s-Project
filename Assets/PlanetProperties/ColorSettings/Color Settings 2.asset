@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetGradient:
     serializedVersion: 2
-    key0: {r: 0.5424528, g: 0.6523663, b: 1, a: 1}
-    key1: {r: 0.07843137, g: 0.19392098, b: 1, a: 1}
+    key0: {r: 0.5367527, g: 0.6574786, b: 0.9864734, a: 1}
+    key1: {r: 0.08018869, g: 0.30031446, b: 1, a: 1}
     key2: {r: 0.15484722, g: 1, b: 0.08018869, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -23,7 +23,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 7903
+    ctime1: 4241
     ctime2: 65535
     ctime3: 0
     ctime4: 0

@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\ProceduralPlanets\EditorScripts\PlanetEditor.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\ScriptableObjects\ShapeSettings.cs" />
      <Compile Include="Assets\Scripts\ProceduralPlanets\PlanetPropertiesGenerators\RigidNoiseFilter.cs" />
+     <Compile Include="Assets\Scripts\ProceduralPlanets\MouseROtator.cs" />
      <None Include="Assets\Day-Night Skyboxes\Textures\Readme for Assigning.txt" />
      <None Include="Assets\Day-Night Skyboxes\readme.txt" />
     <Reference Include="UnityEngine">
